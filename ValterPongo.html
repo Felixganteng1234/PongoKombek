@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VALTER 2025 — Lomba & Pelatihan</title>
+
+    <!-- SEO dasar -->
+    <meta
+      name="description"
+      content="Landing page VALTER 2025: Web Design, Video Campaign, E-Sport MLBB, dan Pelatihan. Daftar sekarang!"
+    />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link ke CSS eksternal -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    x
+  </head>
+  <body>
+    <!-- ================= NAV ================= -->
+    <nav class="nav" aria-label="Utama">
+      <div class="container nav__wrap">
+        <a href="#home" class="brand">
+          <!-- TODO: Ganti dengan logo kamu -->
+          <img src="assets/img/Header/logoValter.png" alt="Logo VALTER 2025" />
+          <span>VALTER 2025</span>
+        </a>
+
+        <button class="nav__toggle" aria-label="Buka menu" id="navToggle">
+          ☰
+        </button>
+
+        <div class="nav__menu" id="navMenu">
+          <a href="#about">About</a>
+          <a href="#features">Highlights</a>
+          <a href="#media">Teaser</a>
+          <a href="#events">Event</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#partners">Partner</a>
+          <a href="#footer">Kontak</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <header id="home" class="hero">
+      <div class="container hero__grid">
+        <div>
+          <div class="pill hero__badge">🎉 Edisi VALTER 2025</div>
+          <h1>
+            Festival Lomba & Pelatihan
+            <span style="color: var(--brand)">VALTER 2025</span>
+          </h1>
+          <p class="lead">
+            Tunjukkan karya terbaikmu di Web Design, Video Campaign, E-Sport
+            MLBB, serta ikuti pelatihan eksklusif bersama mentor industri.
+          </p>
+          <div class="hero__cta">
+            <a class="btn" href="#events">Lihat Event</a>
+            <a class="btn outline" href="#timeline">Jadwal</a>
+          </div>
+          <!-- TODO: Jika ingin menaruh logo sponsor kecil di hero -->
+          <!-- <div style="margin-top:18px;display:flex;gap:14px;align-items:center">
+            <img src="assets/img/logo1.png" alt="Sponsor A" style="height:28px">
+            <img src="assets/img/logo2.png" alt="Sponsor B" style="height:28px">
+          </div> -->
+        </div>
+
+        <div class="hero__visual">
+          <!-- Poster Lomba VALTER 2025 -->
+          <img
+            src="assets/img/Mockup/Copy of posterLomba-02.png"
+            alt="Mockup Website & Event"
+            class="poster-lomba"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Tentang “VALTER 2025”</h2>
+          <p class="lead">
+            Program tahunan yang menghadirkan rangkaian lomba dan pelatihan.
+            Kami mengusung semangat kolaborasi kampus × industri untuk
+            menyiapkan talenta digital.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Tujuan Utama</h3>
+          <ul class="muted-list">
+            <li>
+              • Mendorong karya orisinal dan berpihak pada pengguna
+              (user-centered).
+            </li>
+            <li>• Mempertemukan peserta dengan mentor & juri berpengalaman.</li>
+            <li>
+              • Membuka peluang kemitraan melalui sesi sponsorship & expo.
+            </li>
+          </ul>
+          <!-- TODO: Masukkan foto kegiatan tahun lalu -->
+          <!-- <img src="assets/img/galeri-2024.jpg" alt="Dokumentasi 2024" class="rounded-img"> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES / HIGHLIGHTS ================= -->
+    <section id="features">
+      <div class="container">
+        <div class="section__head">
+          <h2>Highlights</h2>
+          <p class="lead">
+            Poin penting — termasuk “Guest Star” bila ada pengisi acara khusus.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="card card-highlight">
+            <div class="highlight-image-wrapper">
+              <img
+                src="assets/img/Highlights/Copy of guestStarCropped.png"
+                alt="Guest Star - Kevin Anggara"
+                class="highlight-image"
+              />
+              <img
+                src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png"
+                alt="Border"
+                class="highlight-border"
+              />
+            </div>
+            <h3>Guest Star</h3>
+            <p class="lead">
+              <strong>Kevin Anggara</strong> — Content Creator & Digital Expert.
+              Pembicara inspiratif dengan pengalaman 5+ tahun di industri
+              digital.
+            </p>
+            <a
+              href="javascript:void(0)"
+              onclick="openGuestStarModal()"
+              class="btn btn-small"
+              >Selengkapnya</a
+            >
+          </article>
+
+          <article class="card">
+            <div class="icon">💡</div>
+            <h3>Bootcamp Kilat</h3>
+            <p class="lead">
+              Sesi pemanasan UI/UX & Web Design selama 3 hari sebelum lomba
+              dimulai. Dipandu oleh mentor profesional dari industry terkemuka.
+            </p>
+            <a href="#events" class="btn btn-small">Info Detail</a>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏆</div>
+            <h3>Total Hadiah</h3>
+            <p class="lead">
+              <strong>Rp 3.250.000</strong> dalam bentuk uang tunai +
+              merchandise eksklusif + kesempatan magang di perusahaan sponsor.
+            </p>
+            <a href="#events" class="btn btn-small">Lihat Reward</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEDIA / TEASER VIDEO ================= -->
+    <section id="media" class="alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Teaser Video</h2>
+          <p class="lead">Cuplikan singkat suasana VALTER 2025.</p>
+        </div>
+        <div class="media-embed">
+          <!-- Video Trailer VALTER 2025 -->
+          <video
+            width="100%"
+            height="auto"
+            controls
+            autoplay
+            muted
+            loop
+            controlsList="nodownload"
+            poster=""
+            style="
+              border-radius: 12px;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            "
+          >
+            <source src="assets/video/TRAILER VALTER.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EVENT KEGIATAN ================= -->
+    <section id="events">
+      <div class="container">
+        <div class="section__head">
+          <h2>Event Kegiatan</h2>
+          <p class="lead">Ikuti semua atau pilih salah satu kategori.</p>
+        </div>
+
+        <div class="events">
+          <!-- Web Design -->
+          <article class="card">
+            <div class="tag">Lomba</div>
+            <h3 class="mt-8">Web Design</h3>
+            <p class="lead">Bangun landing page responsif sesuai brief.</p>
+            <a class="btn" href="#timeline">Daftar</a>
+          </article>
+
+          <!-- Video Campaign -->
+          <article class="card">
+            <div class="tag">Lomba</div>
+            <h3 class="mt-8">Video Campaign</h3>
+            <p class="lead">Kampanye kreatif berdurasi singkat.</p>
+            <a class="btn" href="#timeline">Daftar</a>
+          </article>
+
+          <!-- E-Sport MLBB -->
+          <article class="card">
+            <div class="tag">E-Sport</div>
+            <h3 class="mt-8">Mobile Legends</h3>
+            <p class="lead">Turnamen MLBB antar tim kampus.</p>
+            <a class="btn" href="#timeline">Daftar</a>
+          </article>
+
+          <!-- Pelatihan -->
+          <article class="card">
+            <div class="tag">Pelatihan</div>
+            <h3 class="mt-8">Workshop Desain & Web</h3>
+            <p class="lead">Belajar langsung dari praktisi.</p>
+            <a class="btn" href="#timeline">Daftar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TIMELINE ================= -->
+    <section id="timeline" class="alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Timeline Event</h2>
+          <p class="lead">Rangkaian jadwal resmi VALTER 2025.</p>
+        </div>
+
+        <div class="card">
+          <div class="timeline">
+            <!-- TODO: sesuaikan tanggal & keterangan -->
+            <div class="milestone">
+              <strong>Pendaftaran Dibuka</strong>
+              <span>1 Jan 2025</span>
+            </div>
+            <div class="milestone">
+              <strong>Bootcamp / Pelatihan</strong>
+              <span>10–12 Jan 2025</span>
+            </div>
+            <div class="milestone">
+              <strong>Batas Pengumpulan Karya</strong>
+              <span>31 Jan 2025</span>
+            </div>
+            <div class="milestone">
+              <strong>Penjurian</strong>
+              <span>1–5 Feb 2025</span>
+            </div>
+            <div class="milestone">
+              <strong>Pengumuman Pemenang</strong>
+              <span>7 Feb 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PARTNER / SPONSOR ================= -->
+    <section id="partners">
+      <div class="container">
+        <div class="section__head">
+          <h2>Open Partner / Sponsorship</h2>
+          <p class="lead">
+            Terima kasih kepada mitra yang mendukung. Hubungi kami untuk paket
+            sponsor.
+          </p>
+        </div>
+
+        <div class="partners">
+          <!-- Logo Partner Gabungan -->
+          <img
+            src="assets/img/MediaPartner/Copy of medpar_1.png"
+            alt="Partner VALTER 2025"
+            class="partners-logo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="footer">
+      <div class="container foot">
+        <div>
+          <a href="#home" class="brand">
+            <!-- TODO: Logo putih untuk footer -->
+            <img
+              src="assets/img/Footer/logotypeValter.png"
+              alt="Logo VALTER 2025"
+            />
+            <span>VALTER 2025</span>
+          </a>
+          <p class="copyright">© 2025 Panitia VALTER. All rights reserved.</p>
+        </div>
+
+        <div>
+          <h4>Kontak</h4>
+          <ul>
+            <!-- TODO: Ganti link -->
+            <li><a href="mailto:panitia@valter.id">panitia@valter.id</a></li>
+            <li>
+              <a
+                href="https://instagram.com/valter"
+                target="_blank"
+                rel="noreferrer"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://tiktok.com/@valter"
+                target="_blank"
+                rel="noreferrer"
+                >TikTok</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Dokumen</h4>
+          <ul>
+            <!-- TODO: Unggah file ke Drive lalu taruh link -->
+            <li><a href="#" target="_blank" rel="noreferrer">Guidebook</a></li>
+            <li>
+              <a href="#" target="_blank" rel="noreferrer"
+                >Template Submission</a
+              >
+            </li>
+            <li><a href="#" target="_blank" rel="noreferrer">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============== MODAL PENDAFTARAN ============== -->
+    <div
+      class="modal"
+      id="regModal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="regTitle"
+    >
+      <div class="modal__dialog">
+        <button class="modal__close" id="regClose" aria-label="Tutup">✕</button>
+        <h3 id="regTitle">Pendaftaran <span id="regCategory">Event</span></h3>
+
+        <form id="regForm" novalidate>
+          <!-- kategori otomatis diisi saat klik tombol Daftar -->
+          <input type="hidden" name="category" id="categoryInput" />
+
+          <div class="field">
+            <label for="fullName">Nama Lengkap</label>
+            <input
+              id="fullName"
+              name="fullName"
+              type="text"
+              placeholder="Nama sesuai KTP/KTM"
+              required
+              minlength="3"
+            />
+            <small class="msg"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="nama@email.com"
+              required
+            />
+            <small class="msg"></small>
+          </div>
+
+          <div class="field">
+            <label for="phone">No. WA/HP</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="contoh: 08xxxxxxxxxx atau +628xxxxxxxxx"
+              required
+            />
+            <small class="msg"></small>
+          </div>
+
+          <div class="field">
+            <label for="team">Nama Tim (opsional)</label>
+            <input
+              id="team"
+              name="team"
+              type="text"
+              placeholder="Isi jika lomba beregu"
+            />
+            <small class="msg"></small>
+          </div>
+
+          <div class="field check">
+            <label>
+              <input id="agree" name="agree" type="checkbox" required />
+              Saya menyetujui syarat & ketentuan lomba.
+            </label>
+            <small class="msg"></small>
+          </div>
+
+          <button class="btn" id="regSubmit" type="submit">
+            Kirim Pendaftaran
+          </button>
+          <p id="regSuccess" class="success" hidden>
+            🎉 Pendaftaran terkirim! Silakan cek email untuk info lanjutan.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============== MODAL GUEST STAR ============== -->
+    <div
+      class="modal"
+      id="guestStarModal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="guestStarTitle"
+    >
+      <div class="modal__dialog">
+        <button class="modal__close" id="guestStarClose" aria-label="Tutup">
+          ✕
+        </button>
+        <h3 id="guestStarTitle">Guest Star VALTER 2025</h3>
+
+        <div class="guest-stars-grid">
+          <!-- Guest Star 1: Kevin Anggara -->
+          <div class="guest-star-card">
+            <div class="guest-image-wrapper">
+              <img
+                src="assets/img/Highlights/Copy of guestStarCropped.png"
+                alt="Kevin Anggara"
+                class="guest-image"
+              />
+              <img
+                src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png"
+                alt="Border"
+                class="guest-border"
+              />
+            </div>
+            <div class="guest-info">
+              <h4>Kevin Anggara</h4>
+              <p class="role">Content Creator & Digital Expert</p>
+              <p class="desc">
+                Pembicara inspiratif dengan pengalaman 5+ tahun di industri
+                digital. Ahli dalam content strategy dan personal branding.
+              </p>
+              <div class="social-links">
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://tiktok.com" target="_blank">TikTok</a>
+                <a href="https://youtube.com" target="_blank">YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guest Star 2: Siti Safira -->
+          <div class="guest-star-card">
+            <div class="guest-image-wrapper">
+              <img
+                src="assets/img/Highlights/Copy of safira.png"
+                alt="Siti Safira"
+                class="guest-image"
+              />
+              <img
+                src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png"
+                alt="Border"
+                class="guest-border"
+              />
+            </div>
+            <div class="guest-info">
+              <h4>Siti Safira</h4>
+              <p class="role">UI/UX Designer & Mentor</p>
+              <p class="desc">
+                Designer berpengalaman 7+ tahun dari perusahaan tech
+                multinasional. Spesialis dalam user experience dan design
+                thinking.
+              </p>
+              <div class="social-links">
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://dribbble.com" target="_blank">Dribbble</a>
+                <a href="https://behance.net" target="_blank">Behance</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link ke JS eksternal -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
