@@ -118,14 +118,9 @@
           <article class="card card-highlight">
             <div class="highlight-image-wrapper">
               <img
-                src="assets/img/Highlights/Copy of guestStarCropped.png"
+                src="assets/img/Highlights/Copy of kevin.png"
                 alt="Guest Star - Kevin Anggara"
                 class="highlight-image"
-              />
-              <img
-                src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png"
-                alt="Border"
-                class="highlight-border"
               />
             </div>
             <h3>Guest Star</h3>
@@ -136,30 +131,47 @@
             </p>
             <a
               href="javascript:void(0)"
-              onclick="openGuestStarModal()"
+              onclick="openGuestModal('kevin')"
               class="btn btn-small"
               >Selengkapnya</a
             >
           </article>
 
-          <article class="card">
-            <div class="icon">💡</div>
-            <h3>Bootcamp Kilat</h3>
+          <article class="card card-highlight">
+            <div class="highlight-image-wrapper">
+              <img
+                src="assets/img/Highlights/Copy of safira.png"
+                alt="Guest Star - Siti Safira"
+                class="highlight-image"
+              />
+            </div>
+            <h3>Pelatihan Konten Kreator</h3>
             <p class="lead">
-              Sesi pemanasan UI/UX & Web Design selama 3 hari sebelum lomba
-              dimulai. Dipandu oleh mentor profesional dari industry terkemuka.
+              Pelatihan Konten Kreator VALTER 2025 adalah program intensif selama tiga hari 
+              bersama narasumber profesional untuk mengasah keterampilan editing dan produksi konten.
             </p>
-            <a href="#events" class="btn btn-small">Info Detail</a>
+            <a
+              href="javascript:void(0)"
+              onclick="openGuestModal('siti')"
+              class="btn btn-small"
+              >Selengkapnya</a
+            >
           </article>
 
-          <article class="card">
-            <div class="icon">🏆</div>
-            <h3>Total Hadiah</h3>
+          <article class="card card-highlight">
+            <div class="highlight-image-wrapper">
+              <img
+                src="assets/img/Mockup/valter-poster.png"
+                alt="Poster Lomba"
+                class="highlight-image2"
+              />
+            </div>
+            <h3>Kegiatan Lomba</h3>
             <p class="lead">
-              <strong>Rp 3.250.000</strong> dalam bentuk uang tunai +
-              merchandise eksklusif + kesempatan magang di perusahaan sponsor.
+              Pelatihan Konten Kreator VALTER 2025 adalah program intensif selama tiga hari 
+              bersama narasumber profesional untuk mengasah keterampilan editing dan produksi konten.
             </p>
-            <a href="#events" class="btn btn-small">Lihat Reward</a>
+            <a href="#events" class="btn btn-small">Selengkapnya</a>
           </article>
         </div>
       </div>
@@ -434,76 +446,48 @@
     </div>
 
     <!-- ============== MODAL GUEST STAR ============== -->
-    <div
-      class="modal"
-      id="guestStarModal"
-      aria-hidden="true"
-      role="dialog"
-      aria-labelledby="guestStarTitle"
-    >
+    <!-- Kevin modal -->
+    <div class="modal" id="guest-kevin-modal" aria-hidden="true" role="dialog" aria-labelledby="guestKevinTitle">
       <div class="modal__dialog">
-        <button class="modal__close" id="guestStarClose" aria-label="Tutup">
-          ✕
-        </button>
-        <h3 id="guestStarTitle">Guest Star VALTER 2025</h3>
-
-        <div class="guest-stars-grid">
-          <!-- Guest Star 1: Kevin Anggara -->
-          <div class="guest-star-card">
-            <div class="guest-image-wrapper">
-              <img
-                src="assets/img/Highlights/Copy of guestStarCropped.png"
-                alt="Kevin Anggara"
-                class="guest-image"
-              />
-              <img
-                src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png"
-                alt="Border"
-                class="guest-border"
-              />
-            </div>
-            <div class="guest-info">
-              <h4>Kevin Anggara</h4>
-              <p class="role">Content Creator & Digital Expert</p>
-              <p class="desc">
-                Pembicara inspiratif dengan pengalaman 5+ tahun di industri
-                digital. Ahli dalam content strategy dan personal branding.
-              </p>
-              <div class="social-links">
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-                <a href="https://tiktok.com" target="_blank">TikTok</a>
-                <a href="https://youtube.com" target="_blank">YouTube</a>
-              </div>
+        <button class="modal__close" aria-label="Tutup">✕</button>
+        <h3 id="guestKevinTitle">Kevin Anggara</h3>
+        <div class="guest-star-card">
+          <div class="guest-image-wrapper">
+            <img src="assets/img/Highlights/Copy of kevin.png" alt="Kevin Anggara" class="guest-image" />
+            <img src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png" alt="Border" class="guest-border" />
+          </div>
+          <div class="guest-info">
+            <h4>Kevin Anggara</h4>
+            <p class="role">Content Creator & Digital Expert</p>
+            <p class="desc">Pembicara inspiratif dengan pengalaman 5+ tahun di industri digital. Ahli dalam content strategy dan personal branding.</p>
+            <div class="social-links">
+              <a href="https://instagram.com" target="_blank">Instagram</a>
+              <a href="https://tiktok.com" target="_blank">TikTok</a>
+              <a href="https://youtube.com" target="_blank">YouTube</a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- Guest Star 2: Siti Safira -->
-          <div class="guest-star-card">
-            <div class="guest-image-wrapper">
-              <img
-                src="assets/img/Highlights/Copy of safira.png"
-                alt="Siti Safira"
-                class="guest-image"
-              />
-              <img
-                src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png"
-                alt="Border"
-                class="guest-border"
-              />
-            </div>
-            <div class="guest-info">
-              <h4>Siti Safira</h4>
-              <p class="role">UI/UX Designer & Mentor</p>
-              <p class="desc">
-                Designer berpengalaman 7+ tahun dari perusahaan tech
-                multinasional. Spesialis dalam user experience dan design
-                thinking.
-              </p>
-              <div class="social-links">
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="https://dribbble.com" target="_blank">Dribbble</a>
-                <a href="https://behance.net" target="_blank">Behance</a>
-              </div>
+    <!-- Siti modal -->
+    <div class="modal" id="guest-siti-modal" aria-hidden="true" role="dialog" aria-labelledby="guestSitiTitle">
+      <div class="modal__dialog">
+        <button class="modal__close" aria-label="Tutup">✕</button>
+        <h3 id="guestSitiTitle">Siti Safira</h3>
+        <div class="guest-star-card">
+          <div class="guest-image-wrapper">
+            <img src="assets/img/Highlights/Copy of safira.png" alt="Siti Safira" class="guest-image" />
+            <img src="assets/img/Highlights/Copy of Border-AssetsBorder-Tag-Assets.png" alt="Border" class="guest-border" />
+          </div>
+          <div class="guest-info">
+            <h4>Siti Safira</h4>
+            <p class="role">UI/UX Designer & Mentor</p>
+            <p class="desc">Designer berpengalaman 7+ tahun dari perusahaan tech multinasional. Spesialis dalam user experience dan design thinking.</p>
+            <div class="social-links">
+              <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+              <a href="https://dribbble.com" target="_blank">Dribbble</a>
+              <a href="https://behance.net" target="_blank">Behance</a>
             </div>
           </div>
         </div>
@@ -512,5 +496,6 @@
 
     <!-- Link ke JS eksternal -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/guest-stars.js"></script>
   </body>
 </html>
