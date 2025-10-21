@@ -201,103 +201,98 @@ h3 {
 
 /* ========== HERO ========== */
 .hero {
-  padding: 96px 0;
+  padding: 0;
+  min-height: calc(100vh - 64px); /* akun untuk tinggi navbar */
+  display: grid;
+  place-items: center;
   background: radial-gradient(80% 60% at 50% -10%, #dbeafe 0%, transparent 60%),
     linear-gradient(180deg, #fff 0%, #f8fbff 100%);
 }
 .hero__grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 36px;
   align-items: center;
-}
-.hero__badge {
-  margin-bottom: 12px;
-}
-.hero__cta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-}
-.hero__visual {
-  border-radius: var(--radius);
-  overflow: visible;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: 36px 20px;
+  max-width: 1100px;
 }
 
-/* ===== HERO: poster full-bleed ===== */
+/* Hero dengan poster: pusatkan konten dan perkuat overlay untuk kontras */
 .hero.has-poster {
+  padding: 0;
+  min-height: calc(100vh - 64px);
   position: relative;
   background-image:
-    linear-gradient(180deg, rgba(2,6,23,.72) 0%, rgba(2,6,23,.5) 35%, rgba(2,6,23,.22) 100%),
+    linear-gradient(180deg, rgba(2,6,23,.78) 0%, rgba(2,6,23,.58) 35%, rgba(2,6,23,.28) 100%),
     url("../img/Mockup/valter-poster.png");
   background-size: cover;
-  background-position: center 1%;
+  background-position: center top;
   background-repeat: no-repeat;
-  padding: 200px 0;
-  min-height: 100vh; 
+  display: grid;
+  place-items: center;
 }
 
-/* teks di atas background */
-.hero.has-poster .container { position: relative; z-index: 2; }
-
-/* lapisan overlay tambahan untuk kontras */
+/* overlay lebih gelap namun halus */
 .hero.has-poster::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(60% 40% at 50% 0%, rgba(2,6,23,.35) 0%, rgba(2,6,23,0) 70%);
+  background: linear-gradient(180deg, rgba(2,6,23,.55), rgba(2,6,23,.35) 40%, rgba(2,6,23,.15) 100%);
+  mix-blend-mode: multiply;
   z-index: 1;
 }
 
-/* Saat pakai poster, kita fokus ke copywriting—sembunyikan kolom gambar */
+/* pastikan teks berada di atas overlay */
+.hero.has-poster .container,
 .hero.has-poster .hero__grid {
-  grid-template-columns: 1fr;
-  text-align: center;
+  position: relative;
+  z-index: 2;
 }
-.hero.has-poster .hero__visual { display: none; }
 
-/* Hero text styling for contrast */
-.hero.has-poster h1,
-.hero.has-poster .lead,
-.hero.has-poster .pill,
-.hero.has-poster .btn {
+/* tipografi hero lebih jelas */
+.hero h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  margin: 0 0 8px;
   color: #fff;
-  text-shadow: 0 8px 24px rgba(2,6,23,0.6);
-}
-.hero.has-poster .pill { background: rgba(255,255,255,0.10); color: rgba(230,240,255,0.95); }
-.hero.has-poster .lead { color: rgba(255,255,255,0.92); max-width: 70ch; }
-
-/* Buttons on hero stand out */
-.hero.has-poster .btn {
-  border-color: rgba(255,255,255,0.18);
-  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-  color: #fff;
-  box-shadow: 0 12px 36px rgba(2,6,23,0.36);
-}
-.hero.has-poster .btn:hover {
-  transform: translateY(-3px) scale(1.01);
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 30px rgba(2,6,23,0.6);
 }
 
-/* Parallax ringan di desktop (aman untuk perf) */
-@media (min-width: 1024px) {
-  .hero.has-poster { background-attachment: fixed; }
-}
-
-/* Poster Lomba Styling */
-.poster-lomba {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  max-width: 100%;
-  max-height: 450px;
+.hero .lead {
+  color: rgba(255,255,255,0.94);
+  max-width: 56ch;
   margin: 0 auto;
-  border-radius: 12px;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+  font-size: clamp(0.95rem, 1.8vw, 1.125rem);
+  text-shadow: 0 6px 18px rgba(2,6,23,0.5);
+}
+
+/* CTA center dan jelas */
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.hero .btn,
+.hero .btn.outline { z-index: 3; }
+
+/* desktop: jika layout 2-kolom gunakan alignment kiri untuk teks */
+@media (min-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    justify-items: start;
+    padding: 56px;
+  }
+  .hero.has-poster .hero__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 
 @media (max-width: 900px) {
@@ -607,6 +602,48 @@ h3 {
   width: 100%;
 }
 
+/* partners button (wrap image) */
+.partners-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 12px;
+  transition: transform 180ms ease, box-shadow 220ms ease;
+}
+.partners-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 6px rgba(14,165,233,0.08);
+}
+.partners-button:hover { transform: translateY(-4px); }
+
+/* Modal content for partners */
+.partners-modal-content { padding-top: 6px; }
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+  gap: 12px;
+  margin-top: 12px;
+  align-items: center;
+}
+.partners-grid img {
+  width: 100%;
+  height: 72px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.98);
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(226,232,240,0.8);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.04);
+}
+
+/* make modal dialog a bit wider for partners */
+#partnersModal .modal__dialog {
+  width: min(800px, 96%);
+}
+
 /* ========== FOOTER ========== */
 footer {
   background: #0b1220;
@@ -625,7 +662,12 @@ footer {
   color: #e5e7eb;
 }
 .foot .brand img {
-  filter: invert(100%);
+  filter: none !important;
+  -webkit-filter: none !important;
+  width: clamp(96px, 10vw, 240px);
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 @media (max-width: 820px) {
   .foot {
@@ -835,6 +877,75 @@ footer {
   transform: scale(1.04);
 }
 
+/* ========== MEDIA TEASER ========== */
+/* Media teaser thumbnail button */
+.media-thumb {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 8px;
+}
+.media-thumb__btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(2,6,23,0.06);
+}
+.media-thumb__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  filter: saturate(0.98) contrast(1.02);
+  transform-origin: center;
+  transition: transform 220ms ease;
+}
+.media-thumb__btn:hover .media-thumb__img { transform: scale(1.02); }
+
+/* Play badge (YouTube-like) */
+.media-thumb__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(72px, 9.5vw, 120px);
+  height: clamp(50px, 7vw, 80px);
+  background: linear-gradient(180deg,#ff3b30,#cc2b22);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.28);
+  z-index: 6;
+  pointer-events: none;
+}
+/* white triangle */
+.media-thumb__play::before{
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: clamp(18px, 2.5vw, 28px) solid #fff;
+  border-top: clamp(12px, 1.7vw, 18px) solid transparent;
+  border-bottom: clamp(12px, 1.7vw, 18px) solid transparent;
+  margin-left: 4px;
+}
+
+/* Modal video uses existing .media-embed styles; ensure video fits */
+#teaserModal .modal__dialog { width: min(920px, 96%); }
+#teaserModal .media-embed { height: auto; border-radius: 10px; overflow: hidden; }
+
+/* small screens: reduce play button size */
+@media (max-width: 560px) {
+  .media-thumb__play { width: 64px; height: 44px; }
+  .media-thumb__play::before { border-left: 16px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+}
+
 @media (max-width: 900px) {
   .features { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .hero { padding: 64px 0; }
@@ -859,38 +970,162 @@ footer {
   -webkit-box-shadow: none !important;
 }
 
-/* rail overlay utility */
-.with-rail {
+/* TV-like container + vertical channel carousel */
+.tv-wrapper { display:flex; justify-content:center; margin-top:18px; }
+.tv-frame {
+  width: min(720px, 100%);
+  max-width: 1100px;
+  padding: 18px;
+  display: block;
+}
+.tv-bezel {
   position: relative;
-  overflow: visible;
+  border-radius: 18px;
+  background: linear-gradient(180deg,#0b0f14,#263041);
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(2,6,23,0.25), inset 0 6px 18px rgba(255,255,255,0.02);
 }
 
-/* span the entire page width */
-.with-rail::after {
-  content: "";
+/* screen area */
+.tv-screen {
+  background: linear-gradient(180deg,#f6fbff,#eaf3ff);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 320px; /* fixed screen height for carousel */
+  box-shadow: inset 0 2px 12px rgba(2,6,23,0.03);
+  position: relative;
+}
+
+/* TV badge: lingkaran merah + logo di pojok kanan atas layar TV */
+.tv-screen {
+  position: relative; /* pastikan pseudo-elemen terposisi relatif terhadap screen */
+}
+
+/* disable old tv-screen pseudo badges */
+.tv-screen::before,
+.tv-screen::after { display: none !important; }
+
+/* per-channel logo badge (placed inside each .channel-item, absolutely positioned relative to .tv-screen) */
+.tv-badge {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -6px;
-  width: 100vw;
-  max-width: none;
-  height: 56px;
+  top: 12px;
+  right: 12px;
+  width: clamp(64px, 10vw, 120px);  
+  height: clamp(64px, 10vw, 120px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  box-shadow: 0 10px 26px rgba(2,6,23,0.18), inset 0 2px 6px rgba(255,255,255,0.06);
+  z-index: 50;
   pointer-events: none;
-
-  /* TILE the SVG horizontally and keep fixed height */
-  background-image: url("../img/Decoration/rel-kereta.svg");
-  background-repeat: repeat-x;
-  background-position: left bottom;
-  background-size: auto 56px; /* keep SVG height consistent, width repeats */
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.06));
-  z-index: 5;
 }
 
-/* smaller screens */
+/* responsive: kecilkan badge ukuran & padding */
 @media (max-width: 720px) {
-  .with-rail::after {
-    height: 40px;
-    bottom: -4px;
+  .tv-badge {
+    top: 10px;
+    right: 10px;
+    width: clamp(44px, 14vw, 80px);
+    height: clamp(44px, 14vw, 80px);
   }
+  .channel-item { padding-top: 46px; }
 }
 
+/* each channel fills the screen area */
+.channel-item {
+  box-sizing: border-box;
+  padding: 28px;
+  min-height: 320px; /* same as screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  background: transparent;
+  position: relative;
+}
+
+/* styling inside channel */
+.channel-item .tag { display:inline-block; margin-bottom:8px; }
+.channel-item h3 { margin:0; font-size:1.4rem; color:var(--brand); }
+.channel-item .lead { color:var(--muted); max-width:60ch; }
+
+/* TV controls */
+.tv-control {
+  position: absolute;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 0;
+  background: rgba(255,255,255,0.88);
+  color: var(--ink);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.12);
+}
+.tv-prev { top: 12px; }
+.tv-next { bottom: 12px; }
+
+/* indicators (optional small dots) */
+.tv-indicators {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  z-index: 30;
+}
+.tv-indicators button {
+  width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,0.6);
+  padding:0;cursor:pointer;
+}
+.tv-indicators button.active { background:var(--brand); }
+
+/* responsive adjustments */
+@media (max-width:900px) {
+  .tv-screen { height: 280px; }
+  .channel-item { min-height: 280px; padding: 18px; }
+  .tv-frame { padding: 12px; }
+}
+@media (max-width:560px) {
+  .tv-screen { height: 220px; }
+  .channel-item { min-height: 220px; padding: 12px; }
+  .tv-control { right:8px; width:34px;height:34px; }
+}
+
+/* ===== FIX: make vertical TV carousel layout reliable/responsive ===== */
+
+/* channel-list must be a full-height column so translateY(-N * 100%) works */
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; /* match .tv-screen height */
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform;
+}
+
+/* each channel occupies exactly one "screen" (percent based) */
+.channel-item {
+  flex: 0 0 100%; /* exactly one full screen tall */
+  box-sizing: border-box;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  background: transparent;
+  position: relative;
+  /* remove min-height to avoid pixel mismatches */
+}
+
+/* keep responsive fallbacks (adjust padding if needed) */
+@media (max-width:900px) {
+  .channel-item { padding: 18px; }
+}
