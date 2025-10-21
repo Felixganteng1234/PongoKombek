@@ -213,26 +213,33 @@ regModal.addEventListener("click", (e) => {
   if (e.target === regModal) closeModal();
 });
 
-// ========= GUEST STAR MODAL =========
+// ========= GUEST STAR MODAL (defensive: toleran jika elemen tidak ada) =========
 const guestStarModal = document.getElementById("guestStarModal");
 const guestStarClose = document.getElementById("guestStarClose");
 
 function openGuestStarModal() {
+  if (!guestStarModal) return;
   guestStarModal.classList.add("show");
   guestStarModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
 
 function closeGuestStarModal() {
+  if (!guestStarModal) return;
   guestStarModal.classList.remove("show");
   guestStarModal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
 
-guestStarClose.addEventListener("click", closeGuestStarModal);
-guestStarModal.addEventListener("click", (e) => {
-  if (e.target === guestStarModal) closeGuestStarModal();
-});
+// Pasang listener hanya jika elemen ada
+if (guestStarClose) {
+  guestStarClose.addEventListener("click", closeGuestStarModal);
+}
+if (guestStarModal) {
+  guestStarModal.addEventListener("click", (e) => {
+    if (e.target === guestStarModal) closeGuestStarModal();
+  });
+}
 
 // Observasi section untuk scrollspy
 document
@@ -245,3 +252,43 @@ document
    "C" = Schema-driven (aturan di satu objek)
 */
 const VALIDATION_VERSION = "B";
+
+// --- Media partners modal (safe: no-op jika elemen tidak ada) ---
+(function () {
+  const btn = document.getElementById("partnersBtn");
+  const modal = document.getElementById("partnersModal");
+  const closeBtn = document.getElementById("partnersClose");
+
+  function openPartners() {
+    if (!modal) return;
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (btn) btn.setAttribute("aria-expanded", "true");
+  }
+
+  function closePartners() {
+    if (!modal) return;
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
+  if (btn) btn.addEventListener("click", openPartners);
+  if (closeBtn) closeBtn.addEventListener("click", closePartners);
+
+  // close when clicking overlay
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closePartners();
+    });
+  }
+
+  // close on ESC (safe: do not interfere with other handlers)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      if (modal && modal.classList.contains("show")) closePartners();
+    }
+  });
+})();
